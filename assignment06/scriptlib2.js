@@ -26,10 +26,7 @@ $(document).ready(function(){
                        items.push(value.fields.name);
                        items.push(value.fields.picture);
                        items.push(value.fields.calories);
-                       items.push(value.fields.main_nutrient_elements);
                        items.push(value.fields.GL);
-                       items.push(value.fields.normal_price);
-                       items.push(value.fields.customer_type);
                        dataSet.push(items);
                        console.log(items);
                 }); // end .each
@@ -45,14 +42,8 @@ $(document).ready(function(){
                          defaultContent:"" },
                      { title: "Calories",
                        defaultContent:"" },
-                     { title: "Main Nutrient Elements",
-                       defaultContent:""},
                      { title: "GL",
                          defaultContent:""},
-                     { title: "Normal Price",
-                       defaultContent:""},
-                     { title: "Customer Type",
-                       defaultContent:""},
                  ]
              } );
         }); // end .getJSON
