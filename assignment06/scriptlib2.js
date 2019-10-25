@@ -40,13 +40,13 @@ $(document).ready(function(){
                      { title: "Name",
                        defaultContent:""},
                      { title: "Calories",
-                         defaultContent:"" },
+                       defaultContent:"" },
                      { title: "Main_Nutrient_Elements",
                        defaultContent:"" },
                      { title: "GL",
                        defaultContent:""},
                      { title: "Normal_Price",
-                         defaultContent:""},
+                       defaultContent:""},
                  ]
              } );
         }); // end .getJSON
