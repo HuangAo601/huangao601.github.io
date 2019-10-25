@@ -24,12 +24,10 @@ $(document).ready(function(){
                $.each(result.records, function(key,value) {
                    items = [];
                        items.push(value.fields.name);
-                       items.push(value.fields.picture);
                        items.push(value.fields.calories);
                        items.push(value.fields.main_nutrient_elements);
-                       items.push(value.fields.json);
-                       items.push(value.fields.gender);
-                       items.push(value.fields.name);
+                       items.push(value.fields.GL);
+                       items.push(value.fields.normal_price);
                        dataSet.push(items);
                        console.log(items);
                 }); // end .each
@@ -39,20 +37,16 @@ $(document).ready(function(){
                  data: dataSet,
                  retrieve: true,
                  columns: [
-                     { title: "Company",
-                       defaultContent:""},
-                     { title: "Product",
-                         defaultContent:"" },
-                     { title: "Number",
-                       defaultContent:"" },
-                     { title: "Geo Code",
-                       defaultContent:""},
-                     { title: "JSON",
-                         defaultContent:""},
-                     { title: "Gender",
-                       defaultContent:""},
                      { title: "Name",
                        defaultContent:""},
+                     { title: "Calories",
+                         defaultContent:"" },
+                     { title: "Main_Nutrient_Elements",
+                       defaultContent:"" },
+                     { title: "GL",
+                       defaultContent:""},
+                     { title: "Normal_Price",
+                         defaultContent:""},
                  ]
              } );
         }); // end .getJSON
