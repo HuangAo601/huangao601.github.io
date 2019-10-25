@@ -23,13 +23,13 @@ $(document).ready(function(){
         $.getJSON(airtable_read_endpoint, function(result) {
                $.each(result.records, function(key,value) {
                    items = [];
-                       items.push(value.fields.Name);
-                       items.push(value.fields.Picture);
-                       items.push(value.fields.thevalueofthousandcalories);
-                       items.push(value.fields.mainnutrientelements);
+                       items.push(value.fields.name);
+                       items.push(value.fields.picture);
+                       items.push(value.fields.calories);
+                       items.push(value.fields.main_nutrient_elements);
                        items.push(value.fields.GL);
-                       items.push(value.fields.Normalprice);
-                       items.push(value.fields.CustomerType);
+                       items.push(value.fields.normal_price);
+                       items.push(value.fields.customer_type);
                        dataSet.push(items);
                        console.log(items);
                 }); // end .each
@@ -43,9 +43,9 @@ $(document).ready(function(){
                        defaultContent:""},
                      { title: "Picture",
                          defaultContent:"" },
-                     { title: "the value of thousand calories",
+                     { title: "Calories",
                        defaultContent:"" },
-                     { title: "main nutrient elements",
+                     { title: "Main Nutrient Elements",
                        defaultContent:""},
                      { title: "GL",
                          defaultContent:""},
