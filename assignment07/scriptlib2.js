@@ -75,11 +75,11 @@ $(document).ready(function(){
                     type : 'bar'
                 },
                 axis: {
-                  x: {label: 'Product'},
+                  x: {label: 'GL Type'},
                   y: {label: '# of Items'}
                 },
                 bar: {
-                    title: "# of Items by Product Category:",
+                    title: "# of Items by GL Types:",
                 }
             });
 
