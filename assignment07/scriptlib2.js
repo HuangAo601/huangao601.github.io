@@ -46,13 +46,13 @@ $(document).ready(function(){
      $("button#get_data2").click(function() {
       var items = [];
       var i = 0;
-      var airtable_read_endpoint = "https://api.airtable.com/v0/appKIU0zkdHt3AVTL/Roll-up?api_key=keycj6dRwXwYLEjiv";
+      var airtable_read_endpoint = "https://api.airtable.com/v0/app8hrXsKLF3PqmzR/Roll-up?api_key=keysBAU1yAr5rXWpV";
       var dataSet = [];
       $.getJSON(airtable_read_endpoint, function(result) {
              $.each(result.records, function(key,value) {
                  items = [];
                      items.push(value.fields.Name);
-                     items.push(value.fields.total_items_by_category);
+                     items.push(value.fields.total_items_by_types);
                      dataSet.push(items);
                      console.log(items);
               }); // end .each
@@ -62,7 +62,7 @@ $(document).ready(function(){
                data: dataSet,
                retrieve: true,
                columns: [
-                   { title: "Product",
+                   { title: "Name",
                      defaultContent:""},
                    { title: "Total Amount",
                        defaultContent:"" },
