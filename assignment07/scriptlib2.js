@@ -38,4 +38,48 @@ $(document).ready(function(){
 
      }); // end button
 
+     $("button#get_data2").click(function() {
+      var items = [];
+      var i = 0;
+      var airtable_read_endpoint = "curl https://api.airtable.com/v0/app8hrXsKLF3PqmzR/Rollup?api_key=keysBAU1yAr5rXWpV";
+      var dataSet = [];
+      $.getJSON(airtable_read_endpoint, function(result) {
+             $.each(result.records, function(key,value) {
+                 items = [];
+                     items.push(value.fields.Name);
+                     items.push(value.fields.Total);
+                     dataSet.push(items);
+                     console.log(items);
+              }); // end .each
+              console.log(dataSet);
+
+           $('#table2').DataTable( {
+               data: dataSet,
+               retrieve: true,
+               columns: [
+                   { title: "Namet",
+                     defaultContent:""},
+                   { title: "Total",
+                       defaultContent:"" },
+               ]
+           } );
+
+           var chart = c3.generate({
+                data: {
+                    columns: dataSet,
+                    type : 'bar'
+                },
+                axis: {
+                  x: {label: 'GL_Type'},
+                  y: {label: '# of items'}
+                },
+                bar: {
+                    title: "# of Items by GL Types:",
+                }
+            });
+
+      }); // end .getJSON
+
+   }); // end button
+
 }); // document ready
