@@ -62,7 +62,7 @@ $(document).ready(function(){
                data: dataSet,
                retrieve: true,
                columns: [
-                   { title: "Name",
+                   { title: "GL Types",
                      defaultContent:""},
                    { title: "Total Amount",
                        defaultContent:"" },
