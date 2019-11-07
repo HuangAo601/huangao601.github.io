@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+  $("button#clear_screen").click(function() {
+    var $x = $("container");
+    $x.empty();
+});
+
     $("button#get_data").click(function() {
         var items = [];
         var i = 0;
@@ -41,7 +46,7 @@ $(document).ready(function(){
      $("button#get_data2").click(function() {
       var items = [];
       var i = 0;
-      var airtable_read_endpoint = "curl https://api.airtable.com/v0/app8hrXsKLF3PqmzR/Rollup?api_key=keysBAU1yAr5rXWpV";
+      var airtable_read_endpoint = "curl https://api.airtable.com/v0/app8hrXsKLF3PqmzR/Roll_up?api_key=keysBAU1yAr5rXWpV";
       var dataSet = [];
       $.getJSON(airtable_read_endpoint, function(result) {
              $.each(result.records, function(key,value) {
