@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+   {% for item in dataset %}
+        {% if loop.index == 1 %}{% set counter = ( counter | default(1) ) %}{% endif %}
+        {% if counter == 1 %}<div class="row">{% endif %}
+        <div class="col-md-4">
+          <div class="thumbnail">
+              <p>Col#:{{ loop.index }}<br>Name:{{ item['name'] }}
+<br>Place:{{ item['place'] }}<br>Tel:{{ item['tel'] }}<br>Cheapness:{{ item['cheapness'] }}
+<br>Richness:{{ item['richness'] }}<br>Review:{{ item['review'] }}<br>Review:{{ item['url'] }}</p>
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                </div>
+          </div>
+        </div> 
+       {% if counter == 3 %}</div><!--end row-->{%  set counter = ( counter | default(1) ) %}{% else %}{% set counter = ( counter | default(0) ) + 1 %}{% endif %}
+      {% endfor %} 
+
+{% endblock %}
