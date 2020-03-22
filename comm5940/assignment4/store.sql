@@ -1,4 +1,5 @@
 CREATE TABLE `store`(
+  `id` int(4) primary key not null auto_increment,
   `Name` varchar(30) DEFAULT NULL,
   `Place` varchar(255) DEFAULT NULL,
   `Tel` varchar(255)  DEFAULT NULL,
